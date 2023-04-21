@@ -6,86 +6,67 @@
     padding: 0;
 }
 
-
-:root{
-    /* I'm giving an height (the same height) to both the card and the image
-    because if something unexpected happens (like a really really long name) it
-    would break only the single card, and not the entire layout */
-    --card-height: 100px;
-    /* mgn-btw-cards is used to space cards between each other */
-    --mgn-btw-cards: 10px;
-}
-
 body{
     font-family: "fredoka", sans-serif;
 }
 
-/* utilities */
+/* generics */
+
 a{
     text-decoration: none;
-    color: #5ab2cc;
+    color: #3880C2;
 }
+
+/* utilities */
+
 .container{
     max-width: 1080px;
     margin: 0 auto;
 }
 
-.mg-ver-50{
-    margin:50px 0;
-}
-
-.float-left{
-    float: left;
-}
-
-.clearfix::after{
-    content: "";
-    display: table;
-    clear: both;
-}
-
 /* header */
-#main-title{
-    color: #e63b76;
-    text-align: center;
+.meet-our-team-header h1{
+    margin: 40px 0;
+    color: #EA5B8D;    
 }
 
-.team-description{
+.meet-our-team-header{
     text-align: center;
+    margin:40px;
 }
 
-/* cards */
+.d-flex{
+    display: flex;
+}
 
-.cards-wrapper{
-    /* formula used to get negative values */
-    margin-left: calc(var(--mgn-btw-cards) * -1);
-    margin-right: calc(var(--mgn-btw-cards) * -1);
+/* CARDS */
+
+.team-cards{
+    flex-wrap: wrap;
+    margin-left: -10px;
+    margin-right: -10px;
+    justify-content: center;
 }
 
 .card{
     background-color: black;
     color: white;
-    /* I'm giving an height (the same height) to both the card and the image
-    because if something unexpected happens (like a really really long name) it
-    would braek only the single card, and not the entire layout */
-    height: var(--card-height); 
-    width: calc(100% / 3 - 2 * (var(--mgn-btw-cards)));
-    margin: 10px var(--mgn-btw-cards);
+    margin: 10px;
+    min-width: calc(100% / 3 - 20px);
 }
 
-.card-picture{
-    margin-right: 10px;    
-    height: var(--card-height);
+.card-image{
+    height: 100px;
+    margin-right: 10px;
 }
 
-.card-infos{
-    margin: 15px 0;
+.card-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px 0;
 }
 
-.card-name{
-    font-weight: 600;
-}
-
-.card-role{
-    margin: 5px 0;
+.card-content *{
+    height: calc((100px - 20px) / 3);
 }
