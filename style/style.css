@@ -1,0 +1,91 @@
+/* css reset */
+
+*{
+    border-style: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+:root{
+    /* I'm giving an height (the same height) to both the card and the image
+    because if something unexpected happens (like a really really long name) it
+    would break only the single card, and not the entire layout */
+    --card-height: 100px;
+    /* mgn-btw-cards is used to space cards between each other */
+    --mgn-btw-cards: 10px;
+}
+
+body{
+    font-family: "fredoka", sans-serif;
+}
+
+/* utilities */
+a{
+    text-decoration: none;
+    color: #5ab2cc;
+}
+.container{
+    max-width: 1080px;
+    margin: 0 auto;
+}
+
+.mg-ver-50{
+    margin:50px 0;
+}
+
+.float-left{
+    float: left;
+}
+
+.clearfix::after{
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* header */
+#main-title{
+    color: #e63b76;
+    text-align: center;
+}
+
+.team-description{
+    text-align: center;
+}
+
+/* cards */
+
+.cards-wrapper{
+    /* formula used to get negative values */
+    margin-left: calc(var(--mgn-btw-cards) * -1);
+    margin-right: calc(var(--mgn-btw-cards) * -1);
+}
+
+.card{
+    background-color: black;
+    color: white;
+    /* I'm giving an height (the same height) to both the card and the image
+    because if something unexpected happens (like a really really long name) it
+    would braek only the single card, and not the entire layout */
+    height: var(--card-height); 
+    width: calc(100% / 3 - 2 * (var(--mgn-btw-cards)));
+    margin: 10px var(--mgn-btw-cards);
+}
+
+.card-picture{
+    margin-right: 10px;    
+    height: var(--card-height);
+}
+
+.card-infos{
+    margin: 15px 0;
+}
+
+.card-name{
+    font-weight: 600;
+}
+
+.card-role{
+    margin: 5px 0;
+}
